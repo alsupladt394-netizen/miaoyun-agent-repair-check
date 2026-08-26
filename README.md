@@ -26,7 +26,7 @@
 ```bash
 curl --fail --silent --show-error --location \
   --proto '=https' --tlsv1.2 \
-  'https://raw.githubusercontent.com/alsupladt394-netizen/miaoyun-agent-repair-check/main/miaoyun-agent-repair-check.sh' \
+  'https://raw.githubusercontent.com/alsupladt394-netizen/miaoyun-agent-repair-check/d04fcc0ad549008e58b75dfeb91a6b3d9c0a0f5c/miaoyun-agent-repair-check.sh' \
   -o /tmp/miaoyun-agent-repair-check.sh
 
 printf '%s  %s\n' \
@@ -36,7 +36,7 @@ printf '%s  %s\n' \
 sudo bash /tmp/miaoyun-agent-repair-check.sh
 ```
 
-只有校验显示 `OK` 才能继续。正式发布后应优先使用 README 中标明的固定 commit URL，而不是可变的 `main`。
+只有校验显示 `OK` 才能继续。以上地址固定到已审计提交 `d04fcc0ad549008e58b75dfeb91a6b3d9c0a0f5c`，不受后续 `main` 变更影响。
 
 ## 菜单
 
