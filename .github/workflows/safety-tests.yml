@@ -1,0 +1,31 @@
+name: safety-tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  safety:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Static checks
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y shellcheck
+          bash -n miaoyun-agent-repair-check.sh
+          shellcheck --severity=style --shell=bash miaoyun-agent-repair-check.sh
+          sha256sum -c miaoyun-agent-repair-check.sh.sha256
+
+      - name: Disposable Debian safety regression tests
+        run: |
+          docker run --rm -i \
+            -v "$PWD:/repo:ro" \
+            debian:12 \
+            bash -c 'apt-get update && apt-get install -y --no-install-recommends util-linux findutils coreutils gawk grep iproute2 procps gzip tar && bash /repo/tests/safety-regression.sh'
+
