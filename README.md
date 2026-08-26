@@ -2,7 +2,6 @@
 
 针对一次已确认的未授权 Komari Agent 部署所编写的检测与定向遏制脚本。
 
-> 重要：旧仓库中的 `remove-unauthorized-komari-agent.sh` 已撤销。旧版本存在进程误识别缺陷，在特定情况下可能错误隔离系统 Bash。不要再运行旧命令、旧固定 commit 或旧 SHA-256。
 
 ## 安全设计
 
