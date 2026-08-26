@@ -28,4 +28,3 @@ jobs:
             -v "$PWD:/repo:ro" \
             debian:12 \
             bash -c 'apt-get update && apt-get install -y --no-install-recommends util-linux findutils coreutils gawk grep iproute2 procps gzip tar && bash /repo/tests/safety-regression.sh'
-

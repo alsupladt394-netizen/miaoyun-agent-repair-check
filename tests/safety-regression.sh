@@ -159,4 +159,3 @@ assert_bash_unchanged "$before"
 pass 'strong IOC fixture changes only the allowlisted targets'
 
 echo 'ALL SAFETY REGRESSION TESTS PASSED'
-
